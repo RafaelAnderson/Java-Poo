@@ -5,13 +5,13 @@ import java.util.Date;
 public class EjemploAutomovil {
     public static void main(String[] args) {
 
-        Automovil auto = new Automovil("Chevrolet", "Camaro", "Blanco", 2.5); // Inicializa el objeto
+        Automovil auto = new Automovil("Chevrolet", "Camaro", Color.BLANCO, 2.5); // Inicializa el objeto
 
-        Automovil auto2 = new Automovil("Mazda", "BT-50", "Rojo", 3.0); // Inicializa el objeto
+        Automovil auto2 = new Automovil("Mazda", "BT-50", Color.ROJO, 3.0); // Inicializa el objeto
 
-        Automovil auto3 = new Automovil("Nissan", "Navara", "Gris Oscuro", 3.5, 50); // Inicializa el objeto
+        Automovil auto3 = new Automovil("Nissan", "Navara", Color.AMARILLO, 3.5, 50); // Inicializa el objeto
 
-        Automovil auto4 = new Automovil("Nissan", "Navara", "Gris Oscuro", 3.5, 50); // Inicializa el objeto
+        Automovil auto4 = new Automovil("Nissan", "Navara", Color.ROJO, 3.5, 50); // Inicializa el objeto
 
         Automovil auto5 = new Automovil(); // Inicializa el objeto
 
@@ -22,6 +22,8 @@ public class EjemploAutomovil {
         System.out.println("son iguales? " + (auto3.equals(auto4))); // Metodo sobreescrito
         System.out.println("son iguales? " + (auto5.equals(auto4))); // NullPoint, objecto sin referencia
         System.out.println("son iguales? " + (auto5.equals(fecha))); // Error de Cast
+        System.out.println(auto3);
+        System.out.println(auto3.toString());
         System.out.println(auto.verDetalle());
         System.out.println(auto2.verDetalle());
         System.out.println(auto3.verDetalle());
