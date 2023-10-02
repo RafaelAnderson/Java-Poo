@@ -4,13 +4,13 @@ public class EjemploAutomovilStatic {
     public static void main(String[] args) {
 
         Automovil.setCapacidadEstanqueEstatico(45);
-        Automovil auto = new Automovil("Chevrolet", "Camaro", Color.AMARILLO, 2.5); // Inicializa el objeto
+        Automovil auto = new Automovil("Chevrolet", "Camaro", Color.AMARILLO, new Motor(2.0, TipoMotor.BENCINA)); // Inicializa el objeto
         auto.setTipo(TipoAutomovil.HATCHBACK);
 
-        Automovil auto2 = new Automovil("Mazda", "BT-50", Color.ROJO, 3.0); // Inicializa el objeto
+        Automovil auto2 = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(2.0, TipoMotor.BENCINA)); // Inicializa el objeto
         auto2.setTipo(TipoAutomovil.PICKUP);
 
-        Automovil auto3 = new Automovil("Nissan", "Navara", Color.AZUL, 3.5, 50); // Inicializa el objeto
+        Automovil auto3 = new Automovil("Nissan", "Navara", Color.AZUL, new Motor(2.0, TipoMotor.BENCINA), new Estanque(50)); // Inicializa el objeto
         auto3.setTipo(TipoAutomovil.PICKUP);
 
         Automovil.setColorPatente(Color.VERDE); // Pertenece a la clase, no a una instancia

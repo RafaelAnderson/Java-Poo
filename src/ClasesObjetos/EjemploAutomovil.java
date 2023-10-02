@@ -5,13 +5,13 @@ import java.util.Date;
 public class EjemploAutomovil {
     public static void main(String[] args) {
 
-        Automovil auto = new Automovil("Chevrolet", "Camaro", Color.BLANCO, 2.5); // Inicializa el objeto
+        Automovil auto = new Automovil("Chevrolet", "Camaro", Color.BLANCO, new Motor(2.0, TipoMotor.BENCINA)); // Inicializa el objeto
 
-        Automovil auto2 = new Automovil("Mazda", "BT-50", Color.ROJO, 3.0); // Inicializa el objeto
+        Automovil auto2 = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(2.0, TipoMotor.DIESEL));
 
-        Automovil auto3 = new Automovil("Nissan", "Navara", Color.AMARILLO, 3.5, 50); // Inicializa el objeto
+        Automovil auto3 = new Automovil("Nissan", "Navara", Color.AMARILLO, new Motor(2.0, TipoMotor.BENCINA), new Estanque(50));
 
-        Automovil auto4 = new Automovil("Nissan", "Navara", Color.ROJO, 3.5, 50); // Inicializa el objeto
+        Automovil auto4 = new Automovil("Nissan", "Navara", Color.ROJO, new Motor(2.0, TipoMotor.BENCINA), new Estanque(50));
 
         Automovil auto5 = new Automovil(); // Inicializa el objeto
 
