@@ -1,5 +1,7 @@
 package Facturas;
 
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Factura {
@@ -60,5 +62,48 @@ public class Factura {
         if (indiceItems < MAX_ITEMS) {
             this.items[this.indiceItems++] = item;
         }
+    }
+
+    public float calcularTotal() {
+        float total = 0.0f;
+        for (ItemFactura item : this.items) {
+            if (item == null) {
+                continue;
+            }
+            total += item.calcularImporte();
+        }
+        return total;
+    }
+
+    public String generarDetalle() {
+        StringBuilder sb = new StringBuilder("Factura N°: ");
+        sb.append(folio)
+                .append("\nCliente: ")
+                .append(this.cliente.getNombre())
+                .append("\t DNI: ")
+                .append(cliente.getDni())
+                .append("\nDescripción: ")
+                .append(this.descripcion)
+                .append("\n");
+
+        SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM 'del' yyyy");
+        sb.append("Fecha Emisión: ")
+                .append(df.format(this.fecha))
+                .append("\n")
+                .append("\n#\tNombre\t$\tCant.\tTotal\n");
+
+        for (ItemFactura item : this.items) {
+            if (item == null) {
+                continue;
+            }
+            sb.append(item).append("\n");
+        }
+        sb.append("\nGran Total: ").append(calcularTotal());
+        return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return generarDetalle();
     }
 }
