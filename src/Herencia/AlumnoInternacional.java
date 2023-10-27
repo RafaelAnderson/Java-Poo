@@ -1,6 +1,6 @@
 package Herencia;
 
-public class AlumnoInternacional extends Alumno {
+public final class AlumnoInternacional extends Alumno {
     private String pais;
     private double notaIdiomas;
 
@@ -31,5 +31,22 @@ public class AlumnoInternacional extends Alumno {
 
     public void setNotaIdiomas(double notaIdiomas) {
         this.notaIdiomas = notaIdiomas;
+    }
+
+    @Override
+    public String saludar() {
+        return super.saludar() + ", soy alumno extranjero del país " + this.getPais();
+    }
+
+    @Override
+    public double calcularPromedio() {
+        System.out.println("calcularPromedio " + AlumnoInternacional.class.getCanonicalName());
+        return ((super.calcularPromedio() * 3) + notaIdiomas) / 4;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\npais='" + pais + '\'' +
+                ", notaIdiomas=" + notaIdiomas;
     }
 }
