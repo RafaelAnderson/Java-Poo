@@ -1,6 +1,6 @@
 package paquetes.jardin;
 
-import Paquetes.org.rafael.app.hogar.Persona;
+import paquetes.hogar.Persona;
 
 public class Perro {
     protected String nombre; // Funciona como herencia

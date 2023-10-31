@@ -1,16 +1,15 @@
 package paquetes.jardin;
 
-import Paquetes.org.rafael.app.hogar.*;
+import paquetes.hogar.*;
 
-import static Paquetes.org.rafael.app.hogar.ColorPelo.*;
-import static Paquetes.org.rafael.app.hogar.Persona.*;
+import static paquetes.hogar.Persona.*;
 
 public class EjemploPaquetes {
     public static void main(String[] args) {
         Persona p = new Persona();
         p.setNombre("Rafael");
         p.setApellido("Ponte");
-        p.setColorPelo(NEGRO);
+        p.setColorPelo(ColorPelo.NEGRO);
         System.out.println(p.getNombre());
 
         Perro perro = new Perro();
