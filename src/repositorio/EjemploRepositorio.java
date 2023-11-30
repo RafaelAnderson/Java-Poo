@@ -2,12 +2,13 @@ package repositorio;
 
 import repositorio.modelo.Cliente;
 import repositorio.repositorio.*;
+import repositorio.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 
 public class EjemploRepositorio {
     public static void main(String[] args) {
-        FullRepositorio repo = new ClienteListRepositorio();
+        FullRepositorio<Cliente> repo = new ClienteListRepositorio();
         repo.crear(new Cliente("Jano", "Pérez"));
         repo.crear(new Cliente("Bea", "González"));
         repo.crear(new Cliente("Luci", "Martínez"));

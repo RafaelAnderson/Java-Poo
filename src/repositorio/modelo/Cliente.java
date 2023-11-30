@@ -2,28 +2,15 @@ package repositorio.modelo;
 
 import java.util.Objects;
 
-public class Cliente {
+public class Cliente extends BaseEntity{
     private Integer id;
     private String nombre;
     private String apellido;
-    private static int ultimoId;
-
-    public Cliente() {
-        this.id = ++ultimoId;
-    }
 
     public Cliente(String nombre, String apellido) {
-        this();
+        super();
         this.nombre = nombre;
         this.apellido = apellido;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getNombre() {
