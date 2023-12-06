@@ -1,4 +1,4 @@
-package EstructuraDatos;
+package EstructuraDatos.list;
 
 import EstructuraDatos.modelo.Alumno;
 

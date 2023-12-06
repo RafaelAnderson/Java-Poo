@@ -1,4 +1,4 @@
-package EstructuraDatos;
+package EstructuraDatos.set;
 
 import java.util.*;
 
