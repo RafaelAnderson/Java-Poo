@@ -6,21 +6,22 @@ import Excepciones.repositorio.repositorio.FullRepositorio;
 import Excepciones.repositorio.repositorio.excepciones.AccesoDatoException;
 import Excepciones.repositorio.repositorio.excepciones.EscrituraAccesoDatoException;
 import Excepciones.repositorio.repositorio.excepciones.LecturaAccesoDatoException;
+import Excepciones.repositorio.repositorio.excepciones.RegistroDuplicadoAccesoDatoException;
 import Excepciones.repositorio.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 
 public class EjemploRepositorio {
     public static void main(String[] args) {
-
         try {
             FullRepositorio<Cliente> repo = new ClienteListRepositorio();
             repo.crear(new Cliente("Jano", "Pérez"));
             repo.crear(new Cliente("Bea", "González"));
             repo.crear(new Cliente("Luci", "Martínez"));
             repo.crear(new Cliente("Andrés", "Guzmán"));
+            repo.crear(new Cliente("Andrés", "Guzmán"));
 
-            repo.crear(null);
+            //repo.crear(null);
 
             List<Cliente> clientes = repo.listar();
             clientes.forEach(System.out::println);
@@ -49,6 +50,9 @@ public class EjemploRepositorio {
 
             System.out.println("\n===== Total =====");
             System.out.println("Total registros: " + repo.total());
+        } catch (RegistroDuplicadoAccesoDatoException e) {
+            System.out.println("Registro duplicado: " + e.getMessage());
+            e.printStackTrace();
         } catch (LecturaAccesoDatoException e) {
             System.out.println("Lectura: " + e.getMessage());
             e.printStackTrace();

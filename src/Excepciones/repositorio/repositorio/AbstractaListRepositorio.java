@@ -1,8 +1,7 @@
 package Excepciones.repositorio.repositorio;
 
 import Excepciones.repositorio.modelo.BaseEntity;
-import Excepciones.repositorio.repositorio.excepciones.EscrituraAccesoDatoException;
-import Excepciones.repositorio.repositorio.excepciones.LecturaAccesoDatoException;
+import Excepciones.repositorio.repositorio.excepciones.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,7 @@ public abstract class AbstractaListRepositorio<T extends BaseEntity>
                 break;
             }
         }
-        if(resultado == null) {
+        if (resultado == null) {
             throw new LecturaAccesoDatoException("No existe el registro con id: " + id);
         }
         return resultado;
@@ -40,8 +39,12 @@ public abstract class AbstractaListRepositorio<T extends BaseEntity>
 
     @Override
     public void crear(T t) throws EscrituraAccesoDatoException {
-        if(t == null) {
+        if (t == null) {
             throw new EscrituraAccesoDatoException("Error al insertar un objeto null");
+        }
+        if (this.dataSource.contains(t)) {
+            throw new RegistroDuplicadoAccesoDatoException("Error el objeto con id "
+                    + t.getId() + " existe en el repositorio");
         }
         this.dataSource.add(t);
     }
