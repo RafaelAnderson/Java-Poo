@@ -1,6 +1,6 @@
-package Java8.lamba;
+package Java8.lambda;
 
-import Java8.lamba.aritmetica.models.Usuario;
+import Java8.lambda.aritmetica.models.Usuario;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;

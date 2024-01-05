@@ -1,4 +1,4 @@
-package Java8.lamba.aritmetica;
+package Java8.lambda.aritmetica;
 
 import java.util.function.BiFunction;
 

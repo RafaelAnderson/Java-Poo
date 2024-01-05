@@ -1,7 +1,7 @@
-package Java8.lamba;
+package Java8.lambda;
 
-import Java8.lamba.aritmetica.Aritmetica;
-import Java8.lamba.aritmetica.Calculadora;
+import Java8.lambda.aritmetica.Aritmetica;
+import Java8.lambda.aritmetica.Calculadora;
 
 public class EjemploInterfaceFunctional {
     public static void main(String[] args) {

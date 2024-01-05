@@ -1,4 +1,4 @@
-package Java8.lamba.aritmetica.models;
+package Java8.lambda.aritmetica.models;
 
 public class Usuario {
     private String nombre;

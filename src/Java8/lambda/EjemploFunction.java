@@ -1,4 +1,4 @@
-package Java8.lamba;
+package Java8.lambda;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
